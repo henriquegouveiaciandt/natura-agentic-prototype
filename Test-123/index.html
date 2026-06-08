@@ -3,236 +3,288 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sacolas Abandonadas - Seller Center</title>
+  <title>Sacolas Abandonadas — Seller Center</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@naturacosmeticos/natds-icons@latest/dist/natds-icons.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="seller-center">
+<body>
 
-  <!-- HEADER -->
-  <header class="sc-header" role="banner">
-    <div class="sc-header__logo">
-      <div class="sc-header__logo-icon" aria-hidden="true">SC</div>
-      <span>Seller Center</span>
-    </div>
-    <nav class="sc-header__nav" id="desktop-nav" aria-label="Navegação principal">
-      <a href="#">Dashboard</a>
-      <a href="#">Conecta Clientes</a>
-      <a href="#" class="active" aria-current="page">Sacolas Abandonadas</a>
-      <a href="#">Relatórios</a>
-    </nav>
-    <div class="sc-header__user">
-      <div class="sc-header__avatar" aria-hidden="true">MS</div>
-      <span class="sc-header__username">Maria Silva</span>
-      <button class="sc-hamburger" id="hamburger-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav">
-        <span></span><span></span><span></span>
-      </button>
+  <!-- =============================================
+       TOPBAR
+  ============================================= -->
+  <header class="topbar" role="banner">
+    <div class="topbar__inner">
+      <div class="topbar__brand">
+        <span class="topbar__logo-mark" aria-hidden="true">SC</span>
+        <span class="topbar__brand-name">Seller Center</span>
+      </div>
+      <nav class="topbar__nav" id="desktop-nav" aria-label="Navegação principal">
+        <a href="#" class="topbar__nav-link">Dashboard</a>
+        <a href="#" class="topbar__nav-link">Conecta Clientes</a>
+        <a href="#" class="topbar__nav-link topbar__nav-link--active" aria-current="page">Sacolas Abandonadas</a>
+        <a href="#" class="topbar__nav-link">Relatórios</a>
+      </nav>
+      <div class="topbar__user">
+        <div class="topbar__avatar" aria-hidden="true">MS</div>
+        <span class="topbar__username">Maria Silva</span>
+        <button class="hamburger" id="hamburger-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
   <!-- MOBILE NAV -->
-  <nav class="sc-mobile-nav" id="mobile-nav" aria-label="Menu mobile" aria-hidden="true">
-    <a href="#">Dashboard</a>
-    <a href="#">Conecta Clientes</a>
-    <a href="#" class="active">Sacolas Abandonadas</a>
-    <a href="#">Relatórios</a>
+  <nav class="mobile-nav" id="mobile-nav" aria-hidden="true" aria-label="Menu mobile">
+    <a href="#" class="mobile-nav__link">Dashboard</a>
+    <a href="#" class="mobile-nav__link">Conecta Clientes</a>
+    <a href="#" class="mobile-nav__link mobile-nav__link--active">Sacolas Abandonadas</a>
+    <a href="#" class="mobile-nav__link">Relatórios</a>
   </nav>
 
-  <!-- VIEW: LISTAGEM -->
-  <main class="sc-main sc-view" id="view-listagem" role="main">
-    <div class="sc-page-header">
-      <h1>Sacolas Abandonadas</h1>
-      <p>Gerencie clientes com sacolas abandonadas e registre seus contatos</p>
+  <!-- =============================================
+       VIEW: LISTAGEM (default)
+  ============================================= -->
+  <main class="view sc-view" id="view-listagem" role="main">
+    <div class="page-header">
+      <h1 class="page-title">Sacolas Abandonadas</h1>
+      <p class="page-subtitle">Gerencie e acompanhe contatos com clientes que abandonaram suas sacolas</p>
     </div>
 
-    <!-- ACCORDION -->
-    <div class="sc-accordion" role="region" aria-label="Como funciona">
-      <button class="sc-accordion__toggle" id="accordion-toggle" aria-expanded="false" aria-controls="accordion-content">
-        <span>&#9432; Como funciona?</span>
-        <span class="sc-accordion__chevron" aria-hidden="true">&#9660;</span>
+    <!-- ACCORDION INFO -->
+    <div class="gaya-accordion" role="region" aria-label="Informativo">
+      <button
+        class="gaya-accordion__trigger"
+        id="accordion-toggle"
+        aria-expanded="false"
+        aria-controls="accordion-content"
+      >
+        <span class="gaya-accordion__trigger-label">
+          <i class="natds-icons natds-icons-outlined-alert-info gaya-accordion__info-icon" aria-hidden="true"></i>
+          Como funciona o fluxo de Sacolas Abandonadas?
+        </span>
+        <i class="natds-icons natds-icons-outlined-navigation-arrowctrlcompactbottom gaya-accordion__chevron" aria-hidden="true"></i>
       </button>
-      <div class="sc-accordion__content" id="accordion-content" role="region" hidden>
-        <p>
-          Na aba <strong>Para Contatar</strong>, você encontra clientes que abandonaram sacolas e ainda não foram contatados.
-          Clique em <strong>WhatsApp</strong> para enviar uma mensagem personalizada ou em <strong>Ver Detalhes</strong> para ver
-          os produtos da sacola. Após enviar a mensagem, o sistema perguntará se você conseguiu contato — sem necessidade de
-          marcar nenhum checkbox manualmente. Todos os contatos ficam registrados na aba <strong>Histórico</strong>.
-        </p>
+      <div class="gaya-accordion__content" id="accordion-content" hidden>
+        <div class="gaya-accordion__body">
+          <p>Na aba <strong>Para Contatar</strong>, você encontra clientes que abandonaram sacolas e ainda não foram contatados. Clique em <strong>WhatsApp</strong> para enviar uma mensagem personalizada ou em <strong>Ver Detalhes</strong> para explorar os produtos da sacola.</p>
+          <p style="margin-top:8px;">Após enviar a mensagem, o sistema perguntará automaticamente se você conseguiu contato — <strong>sem necessidade de marcar checkbox manualmente</strong>. Todos os contatos ficam registrados na aba <strong>Histórico</strong> com status e timestamp.</p>
+        </div>
       </div>
     </div>
 
     <!-- TABS -->
-    <div class="sc-tabs" role="tablist" aria-label="Filtro de clientes">
-      <button class="sc-tab sc-tab--active" id="tab-para-contatar" role="tab" aria-selected="true" aria-controls="content-para-contatar">
-        Para Contatar <span class="sc-badge" id="badge-para-contatar">8</span>
+    <div class="gaya-tabs" role="tablist" aria-label="Filtro de clientes">
+      <button
+        class="gaya-tab gaya-tab--active"
+        id="tab-para-contatar"
+        role="tab"
+        aria-selected="true"
+        aria-controls="content-para-contatar"
+      >
+        Para Contatar
+        <span class="gaya-badge gaya-badge--primary" id="badge-para-contatar">0</span>
       </button>
-      <button class="sc-tab" id="tab-historico" role="tab" aria-selected="false" aria-controls="content-historico">
-        Hist&#243;rico <span class="sc-badge" id="badge-historico">5</span>
+      <button
+        class="gaya-tab"
+        id="tab-historico"
+        role="tab"
+        aria-selected="false"
+        aria-controls="content-historico"
+      >
+        Histórico
+        <span class="gaya-badge" id="badge-historico">0</span>
       </button>
     </div>
 
-    <!-- TAB: PARA CONTATAR -->
+    <!-- TAB PANEL: PARA CONTATAR -->
     <div id="content-para-contatar" role="tabpanel" aria-labelledby="tab-para-contatar">
-      <div class="sc-filter-bar">
-        <input type="search" id="search-input" placeholder="Buscar cliente..." aria-label="Buscar cliente por nome ou telefone">
-        <select id="brand-filter" aria-label="Filtrar por marca">
-          <option value="">Todas as Marcas</option>
+      <div class="filter-bar">
+        <div class="gaya-input-wrapper">
+          <i class="natds-icons natds-icons-outlined-action-search gaya-input-icon" aria-hidden="true"></i>
+          <input
+            type="search"
+            id="search-input"
+            class="gaya-input gaya-input--with-icon"
+            placeholder="Buscar cliente por nome ou telefone…"
+            aria-label="Buscar cliente"
+          >
+        </div>
+        <select id="brand-filter" class="gaya-select" aria-label="Filtrar por marca">
+          <option value="">Todas as marcas</option>
           <option value="Avon">Avon</option>
           <option value="Natura">Natura</option>
         </select>
       </div>
-      <div class="sc-table-wrapper">
-        <table class="sc-table" aria-label="Clientes para contatar">
+
+      <div class="table-wrapper">
+        <table class="gaya-table" aria-label="Clientes para contatar">
           <thead>
             <tr>
               <th scope="col">Cliente</th>
               <th scope="col">Telefone</th>
               <th scope="col">Marca</th>
               <th scope="col">Valor</th>
-              <th scope="col">Qtd. Produtos</th>
-              <th scope="col">Expira&#231;&#227;o</th>
+              <th scope="col">Produtos</th>
+              <th scope="col">Expiração</th>
               <th scope="col">Criado em</th>
-              <th scope="col">A&#231;&#245;es</th>
+              <th scope="col">Ações</th>
             </tr>
           </thead>
           <tbody id="tbody-para-contatar">
-            <!-- filled by JS -->
+            <!-- populated by JS -->
           </tbody>
         </table>
       </div>
-      <div class="sc-pagination" id="pagination-para-contatar" role="navigation" aria-label="Paginação para contatar">
-        <span class="sc-pagination__info" id="pagination-info-para-contatar"></span>
-        <div class="sc-pagination__controls">
-          <button class="sc-pagination__btn" id="prev-para-contatar" aria-label="Página anterior" disabled>&#8249; Anterior</button>
-          <button class="sc-pagination__btn" id="next-para-contatar" aria-label="Próxima página">Pr&#243;xima &#8250;</button>
+
+      <nav class="pagination" id="pagination-para-contatar" aria-label="Paginação Para Contatar">
+        <span class="pagination__info" id="pagination-info-para-contatar"></span>
+        <div class="pagination__controls">
+          <button class="gaya-btn gaya-btn--ghost gaya-btn--sm" id="prev-para-contatar" disabled aria-label="Página anterior">
+            <i class="natds-icons natds-icons-outlined-navigation-arrowleft" aria-hidden="true"></i>
+            Anterior
+          </button>
+          <button class="gaya-btn gaya-btn--ghost gaya-btn--sm" id="next-para-contatar" aria-label="Próxima página">
+            Próxima
+            <i class="natds-icons natds-icons-outlined-navigation-arrowright" aria-hidden="true"></i>
+          </button>
         </div>
-      </div>
+      </nav>
     </div>
 
-    <!-- TAB: HISTORICO -->
+    <!-- TAB PANEL: HISTÓRICO -->
     <div id="content-historico" role="tabpanel" aria-labelledby="tab-historico" hidden>
-      <div class="sc-table-wrapper">
-        <table class="sc-table" aria-label="Histórico de contatos">
+      <div class="table-wrapper">
+        <table class="gaya-table" aria-label="Histórico de contatos">
           <thead>
             <tr>
               <th scope="col">Cliente</th>
               <th scope="col">Marca</th>
               <th scope="col">Valor</th>
-              <th scope="col">Expira&#231;&#227;o</th>
+              <th scope="col">Expiração</th>
               <th scope="col">Status do Contato</th>
               <th scope="col">Data do Contato</th>
             </tr>
           </thead>
           <tbody id="tbody-historico">
-            <!-- filled by JS -->
+            <!-- populated by JS -->
           </tbody>
         </table>
       </div>
-      <div class="sc-pagination" id="pagination-historico" role="navigation" aria-label="Paginação histórico">
-        <span class="sc-pagination__info" id="pagination-info-historico"></span>
-        <div class="sc-pagination__controls">
-          <button class="sc-pagination__btn" id="prev-historico" aria-label="Página anterior" disabled>&#8249; Anterior</button>
-          <button class="sc-pagination__btn" id="next-historico" aria-label="Próxima página">Pr&#243;xima &#8250;</button>
+
+      <nav class="pagination" id="pagination-historico" aria-label="Paginação Histórico">
+        <span class="pagination__info" id="pagination-info-historico"></span>
+        <div class="pagination__controls">
+          <button class="gaya-btn gaya-btn--ghost gaya-btn--sm" id="prev-historico" disabled aria-label="Página anterior">
+            <i class="natds-icons natds-icons-outlined-navigation-arrowleft" aria-hidden="true"></i>
+            Anterior
+          </button>
+          <button class="gaya-btn gaya-btn--ghost gaya-btn--sm" id="next-historico" aria-label="Próxima página">
+            Próxima
+            <i class="natds-icons natds-icons-outlined-navigation-arrowright" aria-hidden="true"></i>
+          </button>
         </div>
-      </div>
+      </nav>
     </div>
   </main>
 
-  <!-- VIEW: DETALHES -->
+  <!-- =============================================
+       VIEW: DETALHES
+  ============================================= -->
   <div class="sc-view" id="view-detalhes" style="display:none;" aria-hidden="true">
+
     <!-- STICKY DETAIL HEADER -->
-    <div class="sc-detail-header" role="banner">
-      <button class="sc-btn sc-btn--link" id="btn-back-to-list" aria-label="Voltar para lista">&#8592; Sacolas Abandonadas</button>
-      <div class="sc-detail-header__info">
-        <h2 id="detail-client-name">Nome do Cliente</h2>
-        <span id="detail-client-phone" class="sc-detail-header__phone"></span>
+    <div class="detail-header">
+      <div class="detail-header__inner">
+        <button class="gaya-btn gaya-btn--ghost gaya-btn--sm" id="btn-back-to-list" aria-label="Voltar para Sacolas Abandonadas">
+          <i class="natds-icons natds-icons-outlined-navigation-arrowleft" aria-hidden="true"></i>
+          Sacolas Abandonadas
+        </button>
+        <div class="detail-header__client">
+          <div class="gaya-avatar" id="detail-avatar" aria-hidden="true"></div>
+          <div>
+            <p class="detail-header__name" id="detail-client-name"></p>
+            <p class="detail-header__phone" id="detail-client-phone"></p>
+          </div>
+        </div>
+        <button class="gaya-btn gaya-btn--whatsapp" id="detail-btn-whatsapp" aria-label="Enviar mensagem pelo WhatsApp">
+          <i class="natds-icons natds-icons-outlined-social-contact" aria-hidden="true"></i>
+          WhatsApp
+        </button>
       </div>
-      <button class="sc-btn sc-btn--whatsapp" id="detail-btn-whatsapp">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        WhatsApp
-      </button>
     </div>
 
     <!-- DETAIL TABS -->
-    <div class="sc-main sc-detail-main">
-      <div class="sc-tabs sc-detail-tabs" role="tablist" aria-label="Abas de detalhes do cliente">
-        <button class="sc-tab" id="detail-tab-perfil" role="tab" aria-selected="false" aria-controls="detail-content-perfil">Perfil</button>
-        <button class="sc-tab" id="detail-tab-historico" role="tab" aria-selected="false" aria-controls="detail-content-historico">Hist&#243;rico</button>
-        <button class="sc-tab sc-tab--active" id="detail-tab-sacolas" role="tab" aria-selected="true" aria-controls="detail-content-sacolas">Sacolas Abandonadas</button>
+    <div class="detail-tabs-wrapper">
+      <div class="gaya-tabs" role="tablist" aria-label="Abas de detalhes">
+        <button class="gaya-tab" id="detail-tab-perfil" role="tab" aria-selected="false" aria-controls="detail-content-perfil">Perfil</button>
+        <button class="gaya-tab" id="detail-tab-historico" role="tab" aria-selected="false" aria-controls="detail-content-historico">Histórico</button>
+        <button class="gaya-tab gaya-tab--active" id="detail-tab-sacolas" role="tab" aria-selected="true" aria-controls="detail-content-sacolas">Sacolas Abandonadas</button>
       </div>
 
-      <!-- PERFIL -->
-      <div id="detail-content-perfil" role="tabpanel" aria-labelledby="detail-tab-perfil" hidden>
-        <div class="sc-profile-card">
-          <h3>Informa&#231;&#245;es do Cliente</h3>
-          <dl class="sc-profile-list">
-            <div class="sc-profile-row">
-              <dt>Nome</dt><dd id="profile-name">—</dd>
-            </div>
-            <div class="sc-profile-row">
-              <dt>Telefone</dt><dd id="profile-phone">—</dd>
-            </div>
-            <div class="sc-profile-row">
-              <dt>E-mail</dt><dd>cliente@email.com.br</dd>
-            </div>
-            <div class="sc-profile-row">
-              <dt>CPF</dt><dd>***.456.789-**</dd>
-            </div>
-            <div class="sc-profile-row">
-              <dt>Data de Cadastro</dt><dd>15/03/2023</dd>
-            </div>
-            <div class="sc-profile-row">
-              <dt>Total de Pedidos</dt><dd>12 pedidos</dd>
-            </div>
+      <!-- TAB: PERFIL -->
+      <div id="detail-content-perfil" role="tabpanel" aria-labelledby="detail-tab-perfil" hidden class="tab-content">
+        <div class="gaya-card">
+          <h2 class="gaya-card__title">Informações do Cliente</h2>
+          <dl class="profile-list">
+            <div class="profile-row"><dt>Nome</dt><dd id="profile-name">—</dd></div>
+            <div class="profile-row"><dt>Telefone</dt><dd id="profile-phone">—</dd></div>
+            <div class="profile-row"><dt>E-mail</dt><dd>cliente@email.com.br</dd></div>
+            <div class="profile-row"><dt>CPF</dt><dd>***.456.789-**</dd></div>
+            <div class="profile-row"><dt>Data de Cadastro</dt><dd>15/03/2023</dd></div>
+            <div class="profile-row"><dt>Total de Pedidos</dt><dd>12 pedidos</dd></div>
           </dl>
         </div>
       </div>
 
-      <!-- HISTORICO DETALHES -->
-      <div id="detail-content-historico" role="tabpanel" aria-labelledby="detail-tab-historico" hidden>
-        <div class="sc-history-list" id="detail-history-list">
-          <p class="sc-empty-state">Nenhum contato registrado para este cliente ainda.</p>
+      <!-- TAB: HISTÓRICO -->
+      <div id="detail-content-historico" role="tabpanel" aria-labelledby="detail-tab-historico" hidden class="tab-content">
+        <div class="gaya-card">
+          <h2 class="gaya-card__title">Histórico de Contatos</h2>
+          <div id="detail-history-list">
+            <p class="empty-state">Nenhum contato registrado para este cliente.</p>
+          </div>
         </div>
       </div>
 
-      <!-- SACOLAS ABANDONADAS -->
-      <div id="detail-content-sacolas" role="tabpanel" aria-labelledby="detail-tab-sacolas">
-        <div class="sc-cart-card">
-          <div class="sc-cart-meta">
-            <span>&#128197; <strong>Abandonado em:</strong> 08/06/2026 14:30</span>
-            <span>&#9200; <strong>Expira em:</strong> 12/06/2026</span>
+      <!-- TAB: SACOLAS ABANDONADAS -->
+      <div id="detail-content-sacolas" role="tabpanel" aria-labelledby="detail-tab-sacolas" class="tab-content">
+        <div class="gaya-card">
+          <div class="cart-meta" id="cart-meta">
+            <!-- populated by JS -->
           </div>
 
-          <div class="sc-product-list-header">
-            <h3>Produtos na Sacola</h3>
-            <label class="sc-select-all-label">
+          <div class="product-list-header">
+            <h2 class="product-list-header__title">Produtos na Sacola</h2>
+            <label class="select-all-label">
               <input type="checkbox" id="select-all-products" checked aria-label="Selecionar todos os produtos">
               Selecionar Todos
             </label>
           </div>
 
-          <ul class="sc-product-list" id="product-list" aria-label="Lista de produtos">
-            <!-- filled by JS -->
+          <ul class="product-list" id="product-list" aria-label="Lista de produtos na sacola">
+            <!-- populated by JS -->
           </ul>
 
-          <div class="sc-cart-summary" aria-label="Resumo financeiro">
-            <div class="sc-summary-row">
+          <div class="cart-summary" aria-label="Resumo financeiro">
+            <div class="summary-row">
               <span>Subtotal</span>
               <span id="summary-subtotal">R$ 0,00</span>
             </div>
-            <div class="sc-summary-row sc-summary-row--discount">
+            <div class="summary-row summary-row--discount">
               <span>Desconto (10%)</span>
-              <span id="summary-discount" class="sc-discount">- R$ 0,00</span>
+              <span id="summary-discount" class="summary-discount">– R$ 0,00</span>
             </div>
-            <div class="sc-summary-row sc-summary-row--total">
+            <div class="summary-row summary-row--total">
               <span>Total</span>
               <span id="summary-total">R$ 0,00</span>
             </div>
           </div>
 
-          <button class="sc-btn sc-btn--primary sc-btn--full" id="btn-compartilhar">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <button class="gaya-btn gaya-btn--primary gaya-btn--full" id="btn-compartilhar">
+            <i class="natds-icons natds-icons-outlined-social-contact" aria-hidden="true"></i>
             Compartilhar Sacola
           </button>
         </div>
@@ -240,84 +292,142 @@
     </div>
   </div>
 
-  <!-- MODAL: ENVIAR MENSAGEM -->
-  <div class="sc-modal" id="modal-enviar" role="dialog" aria-modal="true" aria-labelledby="modal-enviar-title" aria-hidden="true">
-    <div class="sc-modal__overlay" id="overlay-enviar"></div>
-    <div class="sc-modal__content">
-      <div class="sc-modal__header">
-        <h2 id="modal-enviar-title">Enviar Mensagem</h2>
-        <button class="sc-modal__close" id="close-modal-enviar" aria-label="Fechar modal">&#215;</button>
+  <!-- =============================================
+       MODAL: ENVIAR MENSAGEM
+  ============================================= -->
+  <div
+    class="modal-overlay"
+    id="modal-enviar"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-enviar-title"
+    aria-hidden="true"
+    style="display:none;"
+  >
+    <div class="modal-overlay__backdrop" id="overlay-enviar"></div>
+    <div class="gaya-dialog">
+      <div class="gaya-dialog__header">
+        <h2 class="gaya-dialog__title" id="modal-enviar-title">Enviar Mensagem</h2>
+        <button class="gaya-dialog__close" id="close-modal-enviar" aria-label="Fechar modal">
+          <i class="natds-icons natds-icons-outlined-navigation-close" aria-hidden="true"></i>
+        </button>
       </div>
-      <div class="sc-modal__body">
-        <p class="sc-modal__subtitle">Mensagem para: <strong id="modal-client-name">—</strong></p>
-        <div class="sc-form-group">
-          <label for="message-text">Mensagem</label>
-          <textarea id="message-text" rows="5" aria-describedby="message-hint">Olá! Vi que você deixou alguns produtos na sua sacola. Posso te ajudar a finalizar sua compra? 😊</textarea>
-          <span id="message-hint" class="sc-form-hint">Você pode editar a mensagem antes de enviar.</span>
+      <div class="gaya-dialog__body">
+        <p class="gaya-dialog__subtitle">Mensagem para: <strong id="modal-client-name"></strong></p>
+        <div class="form-group">
+          <label for="message-text" class="form-label">Mensagem</label>
+          <textarea
+            id="message-text"
+            class="gaya-textarea"
+            rows="5"
+            aria-describedby="message-hint"
+          ></textarea>
+          <span id="message-hint" class="form-hint">
+            <i class="natds-icons natds-icons-outlined-alert-info" aria-hidden="true"></i>
+            Você pode editar a mensagem antes de enviar. Você será redirecionada para o WhatsApp.
+          </span>
         </div>
       </div>
-      <div class="sc-modal__footer">
-        <button class="sc-btn sc-btn--secondary" id="btn-cancel-send">Cancelar</button>
-        <button class="sc-btn sc-btn--whatsapp" id="btn-send-whatsapp">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <div class="gaya-dialog__footer">
+        <button class="gaya-btn gaya-btn--outlined" id="btn-cancel-send">Cancelar</button>
+        <button class="gaya-btn gaya-btn--whatsapp" id="btn-send-whatsapp">
+          <i class="natds-icons natds-icons-outlined-action-send" aria-hidden="true"></i>
           Enviar Mensagem
         </button>
       </div>
     </div>
   </div>
 
-  <!-- MODAL: CONFIRMACAO -->
-  <div class="sc-modal" id="modal-confirmacao" role="dialog" aria-modal="true" aria-labelledby="modal-confirm-title" aria-hidden="true">
-    <div class="sc-modal__overlay" id="overlay-confirmacao"></div>
-    <div class="sc-modal__content">
-      <!-- STEP 1 -->
-      <div class="sc-modal__step" data-step="1">
-        <div class="sc-modal__header">
-          <h2 id="modal-confirm-title">Entrou em contato?</h2>
+  <!-- =============================================
+       MODAL: CONFIRMAÇÃO DE CONTATO
+  ============================================= -->
+  <div
+    class="modal-overlay"
+    id="modal-confirmacao"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-confirm-title"
+    aria-hidden="true"
+    style="display:none;"
+  >
+    <div class="modal-overlay__backdrop" id="overlay-confirmacao"></div>
+    <div class="gaya-dialog">
+
+      <!-- ETAPA 1: Entrou em contato? -->
+      <div id="confirm-step-1">
+        <div class="gaya-dialog__header">
+          <h2 class="gaya-dialog__title" id="modal-confirm-title">Entrou em contato?</h2>
         </div>
-        <div class="sc-modal__body">
-          <p class="sc-modal__subtitle">Voc&#234; conseguiu falar com <strong id="confirm-client-name">—</strong>?</p>
-          <div class="sc-confirm-buttons">
-            <button class="sc-btn sc-btn--success" id="confirmation-yes">
-              &#10003; Sim, entrei em contato
+        <div class="gaya-dialog__body">
+          <div class="confirm-icon-wrapper">
+            <div class="confirm-icon confirm-icon--info">
+              <i class="natds-icons natds-icons-outlined-social-contact" aria-hidden="true"></i>
+            </div>
+          </div>
+          <p class="confirm-question">Você conseguiu falar com</p>
+          <p class="confirm-client-name" id="confirm-client-name"></p>
+          <div class="confirm-actions">
+            <button class="gaya-btn gaya-btn--outlined gaya-btn--full" id="confirmation-no">
+              <i class="natds-icons natds-icons-outlined-action-cancel" aria-hidden="true"></i>
+              Não consegui contato
             </button>
-            <button class="sc-btn sc-btn--outlined" id="confirmation-no">
-              &#10007; N&#227;o consegui contato
+            <button class="gaya-btn gaya-btn--primary gaya-btn--full" id="confirmation-yes">
+              <i class="natds-icons natds-icons-outlined-alert-check" aria-hidden="true"></i>
+              Sim, entrei em contato
             </button>
           </div>
         </div>
       </div>
-      <!-- STEP 2 -->
-      <div class="sc-modal__step" data-step="2" style="display:none;">
-        <div class="sc-modal__header">
-          <button class="sc-btn sc-btn--link" id="btn-back-step1">&#8592; Voltar</button>
-          <h2>Qual foi o motivo?</h2>
+
+      <!-- ETAPA 2: Motivo -->
+      <div id="confirm-step-2" style="display:none;">
+        <div class="gaya-dialog__header">
+          <button class="gaya-btn gaya-btn--ghost gaya-btn--sm" id="btn-back-step1" aria-label="Voltar">
+            <i class="natds-icons natds-icons-outlined-navigation-arrowleft" aria-hidden="true"></i>
+            Voltar
+          </button>
+          <h2 class="gaya-dialog__title">Motivo do Insucesso</h2>
         </div>
-        <div class="sc-modal__body">
-          <p class="sc-modal__subtitle">Selecione o motivo pelo qual n&#227;o conseguiu contato:</p>
-          <form id="failure-form" novalidate>
-            <div class="sc-radio-card">
-              <input type="radio" name="failure-reason" id="reason-1" value="numero-inexistente">
-              <label for="reason-1">N&#250;mero inexistente ou com erro</label>
-            </div>
-            <div class="sc-radio-card">
-              <input type="radio" name="failure-reason" id="reason-2" value="numero-errado">
-              <label for="reason-2">N&#250;mero n&#227;o pertence &#224; pessoa</label>
-            </div>
-            <div class="sc-radio-card">
-              <input type="radio" name="failure-reason" id="reason-3" value="mensagem-recente">
-              <label for="reason-3">&#218;ltima mensagem muito recente</label>
-            </div>
-            <div class="sc-radio-card">
-              <input type="radio" name="failure-reason" id="reason-4" value="numero-restringido">
-              <label for="reason-4">Meu n&#250;mero foi restringido</label>
-            </div>
-          </form>
+        <div class="gaya-dialog__body">
+          <p class="form-label" style="margin-bottom:12px;">Selecione o motivo pelo qual não conseguiu contato:</p>
+          <div class="reason-group" role="radiogroup" aria-label="Motivos de falha">
+            <label class="reason-card">
+              <input type="radio" name="failure-reason" id="reason-1" value="Número inexistente ou com erro" class="reason-radio">
+              <span class="reason-card__content">
+                <span class="reason-card__icon"><i class="natds-icons natds-icons-outlined-alert-cancel" aria-hidden="true"></i></span>
+                <span class="reason-card__text">Número inexistente ou com erro</span>
+              </span>
+            </label>
+            <label class="reason-card">
+              <input type="radio" name="failure-reason" id="reason-2" value="Número não pertence à pessoa" class="reason-radio">
+              <span class="reason-card__content">
+                <span class="reason-card__icon"><i class="natds-icons natds-icons-outlined-social-person" aria-hidden="true"></i></span>
+                <span class="reason-card__text">Número não pertence à pessoa</span>
+              </span>
+            </label>
+            <label class="reason-card">
+              <input type="radio" name="failure-reason" id="reason-3" value="Última mensagem muito recente" class="reason-radio">
+              <span class="reason-card__content">
+                <span class="reason-card__icon"><i class="natds-icons natds-icons-outlined-alert-info" aria-hidden="true"></i></span>
+                <span class="reason-card__text">Última mensagem muito recente</span>
+              </span>
+            </label>
+            <label class="reason-card">
+              <input type="radio" name="failure-reason" id="reason-4" value="Meu número foi restringido" class="reason-radio">
+              <span class="reason-card__content">
+                <span class="reason-card__icon"><i class="natds-icons natds-icons-outlined-alert-warning" aria-hidden="true"></i></span>
+                <span class="reason-card__text">Meu número foi restringido</span>
+              </span>
+            </label>
+          </div>
         </div>
-        <div class="sc-modal__footer">
-          <button class="sc-btn sc-btn--primary" id="btn-confirm-failure" disabled>Confirmar</button>
+        <div class="gaya-dialog__footer">
+          <button class="gaya-btn gaya-btn--primary" id="btn-confirm-failure" disabled>
+            Registrar Motivo
+          </button>
         </div>
       </div>
+
     </div>
   </div>
 
