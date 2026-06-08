@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sacolas Abandonadas - Consultoria de Beleza</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <button class="menu-btn" id="menu-toggle" aria-label="Fechar menu">&#9776; Menu</button>
+      </div>
+      <div class="brand-area">
+        <div class="brand-logo">
+          <span class="brand-text">consultoria<br>de beleza</span>
+          <span class="brand-separator">|</span>
+          <div class="brand-names">
+            <span class="brand-natura">natura</span>
+            <span class="brand-avon">avon</span>
+          </div>
+        </div>
+      </div>
+      <nav class="sidebar-nav" aria-label="Navegação principal">
+        <div class="nav-section-title">&#8592; Vendas</div>
+        <ul class="nav-list">
+          <li><a href="#" class="nav-item active" data-nav="painel">Painel de Vendas</a></li>
+          <li><a href="#" class="nav-item" data-nav="loja">Configuração da Minha Loja</a></li>
+          <li><a href="#" class="nav-item" data-nav="vendas">Minhas Vendas</a></li>
+          <li><a href="#" class="nav-item" data-nav="clientes">Meus Clientes</a></li>
+          <li><a href="#" class="nav-item" data-nav="cupons">Cupons</a></li>
+          <li><a href="#" class="nav-item" data-nav="conecta">Conecta Clientes <span class="badge-novo">NOVO</span></a></li>
+          <li><a href="#" class="nav-item" data-nav="relatorios">Relatórios</a></li>
+          <li><a href="#" class="nav-item" data-nav="duvidas">Dúvidas Frequentes</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Sidebar Overlay (mobile) -->
+    <div class="sidebar-overlay hidden" id="sidebar-overlay"></div>
+
+    <!-- Main Content -->
+    <div class="main-wrapper">
+      <!-- Top Bar -->
+      <header class="top-bar">
+        <div class="top-bar-left">
+          <button class="menu-toggle-mobile" id="menu-toggle-mobile" aria-label="Abrir menu">&#9776;</button>
+        </div>
+        <div class="top-bar-right">
+          <div class="user-avatar" aria-label="Usuária NA">NA</div>
+        </div>
+      </header>
+
+      <!-- VIEW: Listing -->
+      <main id="view-listing" class="view view-listing" role="main">
+        <div class="page-back">
+          <a href="#" class="back-link" id="back-to-dashboard">&#8592; Voltar</a>
+        </div>
+
+        <!-- Info Accordion -->
+        <div class="info-accordion" id="info-accordion" role="region" aria-label="Informações sobre sacolas abandonadas">
+          <button class="accordion-header" id="accordion-btn" aria-expanded="false" aria-controls="accordion-content">
+            <span class="accordion-icon">&#9432;</span>
+            <span class="accordion-title">o que são as sacolas abandonadas?</span>
+            <span class="accordion-chevron" id="accordion-chevron">&#9660;</span>
+          </button>
+          <div class="accordion-content" id="accordion-content" hidden>
+            <p>Aqui você encontra as melhores ofertas para enviar para seus clientes.</p>
+            <ul>
+              <li><strong>sacolas abandonadas:</strong> são pedidos que seus clientes ainda não finalizaram, você poderá entrar em contato com eles e incentivá-los a concluir a compra.</li>
+              <li><strong>aniversariantes:</strong> você pode mandar um parabéns e um cupom especial para os clientes que estão fazendo aniversário esse mês.</li>
+              <li><strong>ofertas exclusivas:</strong> ofertas mais personalizadas de algum produto ou linha específica.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Listing Header -->
+        <div class="listing-header">
+          <h1 class="listing-title">clientes que possuem sacolas abandonadas</h1>
+          <a href="#" class="download-link" id="download-planilha" aria-label="Baixar planilha">&#8595; baixar planilha</a>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs-container" role="tablist" aria-label="Visualização de sacolas">
+          <button class="tab-btn active" id="tab-to-contact" role="tab" aria-selected="true" aria-controls="panel-to-contact">para contatar</button>
+          <button class="tab-btn" id="tab-history" role="tab" aria-selected="false" aria-controls="panel-history">histórico</button>
+        </div>
+
+        <!-- Tab Panel: Para Contatar -->
+        <div id="panel-to-contact" class="tab-panel" role="tabpanel" aria-labelledby="tab-to-contact">
+          <!-- Table Header -->
+          <div class="table-header to-contact-header" aria-hidden="true">
+            <div class="col-client">cliente</div>
+            <div class="col-brand">marca</div>
+            <div class="col-value">valor</div>
+            <div class="col-expiry">expira em</div>
+            <div class="col-actions"></div>
+          </div>
+          <div class="client-list" id="to-contact-list" aria-label="Clientes para contatar">
+            <!-- Rendered by JS -->
+          </div>
+          <div class="pagination" id="pagination-to-contact" role="navigation" aria-label="Paginação">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- Tab Panel: Histórico -->
+        <div id="panel-history" class="tab-panel hidden" role="tabpanel" aria-labelledby="tab-history">
+          <!-- Table Header -->
+          <div class="table-header history-header" aria-hidden="true">
+            <div class="col-client">cliente</div>
+            <div class="col-brand">marca</div>
+            <div class="col-value">valor</div>
+            <div class="col-expiry">expira em</div>
+            <div class="col-status">status</div>
+          </div>
+          <div class="history-list" id="history-list" aria-label="Histórico de contatos">
+            <!-- Rendered by JS -->
+          </div>
+          <div class="pagination" id="pagination-history" role="navigation" aria-label="Paginação histórico">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </main>
+
+      <!-- VIEW: Detail -->
+      <main id="view-detail" class="view view-detail hidden" role="main">
+        <div class="page-back">
+          <a href="#" class="back-link" id="back-to-listing">&#8592; Voltar</a>
+        </div>
+
+        <!-- Fixed Client Header -->
+        <div class="client-detail-header" id="client-detail-header">
+          <div class="client-info">
+            <span class="client-name" id="detail-client-name"></span>
+            <span class="client-phone" id="detail-client-phone"></span>
+          </div>
+          <button class="whatsapp-btn" id="detail-whatsapp-btn" aria-label="Abrir WhatsApp">
+            <svg class="whatsapp-icon-svg" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" width="22" height="22">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Detail Tabs -->
+        <div class="tabs-container detail-tabs" role="tablist" aria-label="Informações do cliente">
+          <button class="tab-btn" id="detail-tab-profile" role="tab" aria-selected="false" aria-controls="detail-panel-profile">Perfil</button>
+          <button class="tab-btn" id="detail-tab-history" role="tab" aria-selected="false" aria-controls="detail-panel-history">Histórico</button>
+          <button class="tab-btn active" id="detail-tab-basket" role="tab" aria-selected="true" aria-controls="detail-panel-basket">Sacolas Abandonadas</button>
+        </div>
+
+        <!-- Detail Panel: Profile -->
+        <div id="detail-panel-profile" class="tab-panel hidden" role="tabpanel" aria-labelledby="detail-tab-profile">
+          <div class="detail-content">
+            <p class="placeholder-content">Informações de perfil do cliente serão exibidas aqui.</p>
+          </div>
+        </div>
+
+        <!-- Detail Panel: History -->
+        <div id="detail-panel-history" class="tab-panel hidden" role="tabpanel" aria-labelledby="detail-tab-history">
+          <div class="detail-content">
+            <p class="placeholder-content">Histórico de compras do cliente será exibido aqui.</p>
+          </div>
+        </div>
+
+        <!-- Detail Panel: Basket -->
+        <div id="detail-panel-basket" class="tab-panel" role="tabpanel" aria-labelledby="detail-tab-basket">
+          <div class="detail-content">
+            <div class="basket-dates">
+              <span class="basket-date-item"><strong>Abandono:</strong> <span id="basket-abandoned-at"></span></span>
+              <span class="basket-date-separator">|</span>
+              <span class="basket-date-item"><strong>Expira em:</strong> <span id="basket-expires-at"></span></span>
+            </div>
+
+            <div class="product-list-header">
+              <label class="select-all-label">
+                <input type="checkbox" id="select-all-checkbox" aria-label="Selecionar todos os produtos">
+                Selecionar Todos
+              </label>
+            </div>
+
+            <ul class="product-list" id="product-list" aria-label="Lista de produtos na sacola">
+              <!-- Rendered by JS -->
+            </ul>
+
+            <div class="financial-summary" aria-label="Resumo financeiro">
+              <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="summary-subtotal"></span>
+              </div>
+              <div class="summary-row discount">
+                <span>Desconto</span>
+                <span id="summary-discount" class="discount-value"></span>
+              </div>
+              <div class="summary-row total">
+                <span>Total</span>
+                <span id="summary-total"></span>
+              </div>
+            </div>
+
+            <button class="btn-primary btn-share" id="share-basket-btn">Compartilhar Sacola</button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- MODAL: Enviar Mensagem -->
+  <div class="modal-overlay hidden" id="modal-send-message" role="dialog" aria-modal="true" aria-labelledby="modal-send-title">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-send-title">Enviar Mensagem</h2>
+        <button class="modal-close" id="close-send-modal" aria-label="Fechar modal">&#10005;</button>
+      </div>
+      <div class="modal-body">
+        <label class="sr-only" for="whatsapp-message">Mensagem para o cliente</label>
+        <textarea class="message-textarea" id="whatsapp-message" rows="5" aria-label="Mensagem WhatsApp editável"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary" id="cancel-send-btn">Cancelar</button>
+        <button class="btn-primary btn-whatsapp-send" id="send-message-btn">
+          <svg viewBox="0 0 24 24" fill="white" width="16" height="16" style="margin-right:6px;vertical-align:middle;">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Enviar Mensagem
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Confirmation Step 1 -->
+  <div class="modal-overlay hidden" id="modal-confirm-step1" role="dialog" aria-modal="true" aria-labelledby="modal-confirm1-title">
+    <div class="modal-content modal-confirm">
+      <h2 class="modal-title modal-title-centered" id="modal-confirm1-title">entrou em contato?</h2>
+      <p class="modal-body-text" id="confirm-step1-text"></p>
+      <div class="modal-footer confirm-footer">
+        <button class="btn-secondary" id="confirm-no-btn">não</button>
+        <button class="btn-primary" id="confirm-yes-btn">sim, entrei em contato</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Confirmation Step 2 -->
+  <div class="modal-overlay hidden" id="modal-confirm-step2" role="dialog" aria-modal="true" aria-labelledby="modal-confirm2-title">
+    <div class="modal-content modal-confirm">
+      <h2 class="modal-title modal-title-centered" id="modal-confirm2-title">por que você não conseguiu?</h2>
+      <p class="modal-body-text modal-body-text-centered">Selecione o motivo de não ter conseguido entrar em contato</p>
+      <div class="reason-buttons" role="group" aria-label="Motivos de falha no contato">
+        <button class="btn-reason" data-reason="o número não existe ou deu erro">o número não existe ou deu erro</button>
+        <button class="btn-reason" data-reason="o número não pertence a pessoa">o número não pertence a pessoa</button>
+        <button class="btn-reason" data-reason="última mensagem muito recente">última mensagem muito recente</button>
+        <button class="btn-reason" data-reason="meu número foi restringido">meu número foi restringido</button>
+      </div>
+      <button class="btn-text-link" id="back-to-step1-btn">voltar</button>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
