@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sacolas Abandonadas - Padronização do Fluxo de Confirmação de Contato">
+    <title>Sacolas Abandonadas | Seller Center</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="header-content">
+            <h1>Seller Center</h1>
+            <div class="header-actions">
+                <span class="user-info">Consultora Maria Silva</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content" role="main">
+        <div class="container">
+            <!-- Page Title and Description -->
+            <section class="page-header">
+                <div>
+                    <h1 class="page-title">Sacolas Abandonadas</h1>
+                    <p class="page-subtitle">Acompanhe e retome vendas de clientes que deixaram produtos no carrinho</p>
+                </div>
+            </section>
+
+            <!-- Informational Accordion (Collapsed by Default) -->
+            <section class="info-accordion">
+                <button class="accordion-button" aria-expanded="false" aria-controls="accordion-content">
+                    <span class="accordion-icon">▼</span>
+                    <span class="accordion-title">Como funciona o fluxo de confirmação de contato</span>
+                </button>
+                <div id="accordion-content" class="accordion-content" hidden>
+                    <div class="accordion-body">
+                        <ol>
+                            <li><strong>Para Contatar:</strong> Visualize clientes que nunca foram contatados sobre suas sacolas abandonadas</li>
+                            <li><strong>Enviar Mensagem:</strong> Use WhatsApp ou compartilhe a sacola diretamente com o cliente</li>
+                            <li><strong>Confirmação:</strong> Ao voltar ao Seller Center, confirme se o contato foi bem-sucedido</li>
+                            <li><strong>Histórico:</strong> Acompanhe todos os contatos realizados e seus status</li>
+                        </ol>
+                        <p class="accordion-note">📌 Cada interação é automaticamente registrada com data, hora e status para rastreamento completo.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tabs Navigation -->
+            <div class="tabs-container">
+                <div class="tabs-list" role="tablist">
+                    <button
+                        class="tab-button active"
+                        id="tab-to-contact"
+                        role="tab"
+                        aria-selected="true"
+                        aria-controls="panel-to-contact"
+                    >
+                        <span class="tab-icon">📞</span>
+                        Para Contatar
+                        <span class="tab-badge" id="badge-to-contact">3</span>
+                    </button>
+                    <button
+                        class="tab-button"
+                        id="tab-history"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="panel-history"
+                    >
+                        <span class="tab-icon">📋</span>
+                        Histórico
+                        <span class="tab-badge" id="badge-history">2</span>
+                    </button>
+                </div>
+
+                <!-- Tab 1: Para Contatar -->
+                <div
+                    id="panel-to-contact"
+                    class="tab-panel active"
+                    role="tabpanel"
+                    aria-labelledby="tab-to-contact"
+                >
+                    <div class="tab-content">
+                        <div class="table-responsive">
+                            <table class="table" role="table">
+                                <thead>
+                                    <tr>
+                                        <th>Cliente</th>
+                                        <th>Telefone</th>
+                                        <th>Marca</th>
+                                        <th>Valor</th>
+                                        <th>Qtd. Produtos</th>
+                                        <th>Expiração</th>
+                                        <th>Criado em</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="table-to-contact">
+                                    <!-- Data inserted by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="pagination-container" id="pagination-to-contact">
+                            <!-- Pagination inserted by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Histórico -->
+                <div
+                    id="panel-history"
+                    class="tab-panel"
+                    role="tabpanel"
+                    aria-labelledby="tab-history"
+                >
+                    <div class="tab-content">
+                        <div class="table-responsive">
+                            <table class="table" role="table">
+                                <thead>
+                                    <tr>
+                                        <th>Cliente</th>
+                                        <th>Marca</th>
+                                        <th>Valor</th>
+                                        <th>Expiração</th>
+                                        <th>Status</th>
+                                        <th>Data/Hora do Contato</th>
+                                        <th>Detalhes</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="table-history">
+                                    <!-- Data inserted by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="pagination-container" id="pagination-history">
+                            <!-- Pagination inserted by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal: Detalhes da Sacola -->
+    <div class="modal" id="modal-details" role="dialog" aria-labelledby="modal-details-title" aria-hidden="true">
+        <div class="modal-overlay" id="modal-overlay-details"></div>
+        <div class="modal-content">
+            <div class="modal-header" id="modal-details-header">
+                <!-- Dynamically populated -->
+            </div>
+
+            <div class="modal-body">
+                <div class="tabs-container modal-tabs">
+                    <div class="tabs-list" role="tablist">
+                        <button
+                            class="tab-button"
+                            id="tab-profile"
+                            role="tab"
+                            aria-selected="false"
+                            aria-controls="panel-profile"
+                        >
+                            Perfil
+                        </button>
+                        <button
+                            class="tab-button"
+                            id="tab-modal-history"
+                            role="tab"
+                            aria-selected="false"
+                            aria-controls="panel-modal-history"
+                        >
+                            Histórico
+                        </button>
+                        <button
+                            class="tab-button active"
+                            id="tab-abandoned-bags"
+                            role="tab"
+                            aria-selected="true"
+                            aria-controls="panel-abandoned-bags"
+                        >
+                            Sacolas Abandonadas
+                        </button>
+                    </div>
+
+                    <!-- Profile Tab -->
+                    <div
+                        id="panel-profile"
+                        class="tab-panel"
+                        role="tabpanel"
+                        aria-labelledby="tab-profile"
+                    >
+                        <div class="profile-content" id="profile-content">
+                            <!-- Populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- History Tab -->
+                    <div
+                        id="panel-modal-history"
+                        class="tab-panel"
+                        role="tabpanel"
+                        aria-labelledby="tab-modal-history"
+                    >
+                        <div class="history-content" id="history-content">
+                            <!-- Populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Abandoned Bags Tab -->
+                    <div
+                        id="panel-abandoned-bags"
+                        class="tab-panel active"
+                        role="tabpanel"
+                        aria-labelledby="tab-abandoned-bags"
+                    >
+                        <div class="bag-details" id="bag-details-content">
+                            <!-- Populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="button button-secondary" id="btn-close-details">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Enviar Mensagem -->
+    <div class="modal" id="modal-send-message" role="dialog" aria-labelledby="modal-message-title" aria-hidden="true">
+        <div class="modal-overlay" id="modal-overlay-message"></div>
+        <div class="modal-content modal-message">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-message-title">Enviar Mensagem</h2>
+                <button class="modal-close" id="btn-close-message" aria-label="Fechar modal">×</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="message-text" class="form-label">Mensagem</label>
+                    <textarea
+                        id="message-text"
+                        class="form-textarea"
+                        rows="6"
+                        placeholder="Edite a mensagem que será enviada..."
+                    >Olá! Notei que você deixou alguns produtos no carrinho. Gostaria de ajudar com qualquer dúvida ou entrega especial?</textarea>
+                </div>
+                <p class="message-info">💡 Esta mensagem será enviada via WhatsApp</p>
+            </div>
+
+            <div class="modal-footer">
+                <button class="button button-secondary" id="btn-cancel-message">Cancelar</button>
+                <button class="button button-primary" id="btn-send-message">Enviar Mensagem</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Confirmação de Contato -->
+    <div class="modal" id="modal-confirm-contact" role="dialog" aria-labelledby="modal-confirm-title" aria-hidden="true">
+        <div class="modal-overlay" id="modal-overlay-confirm"></div>
+        <div class="modal-content modal-confirm">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-confirm-title">Confirmação de Contato</h2>
+            </div>
+
+            <div class="modal-body">
+                <!-- Stage 1: Did you contact? -->
+                <div id="stage-1" class="confirmation-stage active">
+                    <p class="stage-question">Você conseguiu entrar em contato com o cliente?</p>
+                    <div class="stage-actions">
+                        <button class="button button-success" id="btn-contact-yes">Sim, entrei em contato</button>
+                        <button class="button button-secondary" id="btn-contact-no">Não consegui contato</button>
+                    </div>
+                </div>
+
+                <!-- Stage 2: Failure Reason -->
+                <div id="stage-2" class="confirmation-stage" hidden>
+                    <p class="stage-question">Qual foi o motivo?</p>
+                    <div class="stage-reasons">
+                        <button class="reason-button" data-reason="inexistent-number">
+                            <span class="reason-icon">📵</span>
+                            <span class="reason-text">Número inexistente ou com erro</span>
+                        </button>
+                        <button class="reason-button" data-reason="wrong-person">
+                            <span class="reason-icon">❌</span>
+                            <span class="reason-text">Número não pertence à pessoa</span>
+                        </button>
+                        <button class="reason-button" data-reason="recent-message">
+                            <span class="reason-icon">⏱️</span>
+                            <span class="reason-text">Última mensagem muito recente</span>
+                        </button>
+                        <button class="reason-button" data-reason="restricted-number">
+                            <span class="reason-icon">🚫</span>
+                            <span class="reason-text">Meu número foi restringido</span>
+                        </button>
+                    </div>
+                    <div class="stage-actions">
+                        <button class="button button-secondary" id="btn-back-stage1">Voltar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container" role="region" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
