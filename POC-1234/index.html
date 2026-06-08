@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacolas Abandonadas - Seller Center</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>Sacolas Abandonadas</h1>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Informational Accordion (Collapsed by default) -->
+            <section class="accordion-section">
+                <button class="accordion-trigger" aria-expanded="false" aria-controls="accordion-content">
+                    <span class="accordion-icon">▶</span>
+                    <span class="accordion-title">Informações sobre Sacolas Abandonadas</span>
+                </button>
+                <div id="accordion-content" class="accordion-content" hidden>
+                    <p>Nesta seção você consegue visualizar e contatar clientes que deixaram produtos no carrinho sem finalizar a compra. Registre cada interação para manter um histórico rastreável de contatos e resultados.</p>
+                </div>
+            </section>
+
+            <!-- Tabs Navigation -->
+            <div class="tabs-container">
+                <nav class="tabs-nav" role="tablist">
+                    <button
+                        class="tab-button active"
+                        data-tab="to-contact"
+                        role="tab"
+                        aria-selected="true"
+                        aria-controls="to-contact-panel">
+                        Para Contatar
+                    </button>
+                    <button
+                        class="tab-button"
+                        data-tab="history"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="history-panel">
+                        Histórico
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Tab Panels -->
+            <div class="tab-content">
+                <!-- To Contact Tab -->
+                <div
+                    id="to-contact-panel"
+                    class="tab-panel active"
+                    role="tabpanel"
+                    aria-labelledby="to-contact">
+                    <div class="cart-list">
+                        <div class="list-header">
+                            <p class="result-count">6 clientes para contatar</p>
+                        </div>
+
+                        <!-- Cart Items -->
+                        <div class="cart-item">
+                            <div class="cart-item-header">
+                                <div class="cart-item-info">
+                                    <h3 class="cart-item-name">Maria Silva</h3>
+                                    <p class="cart-item-phone">
+                                        <span class="label">Telefone:</span>
+                                        <span class="value">(11) 98765-4321</span>
+                                    </p>
+                                </div>
+                                <div class="cart-item-actions">
+                                    <button class="btn-whatsapp" data-cart-id="1" title="Enviar via WhatsApp">
+                                        <span class="icon">💬</span>
+                                    </button>
+                                    <button class="btn-details" data-cart-id="1" title="Ver detalhes">
+                                        <span class="icon">→</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="cart-item-details">
+                                <div class="detail-row">
+                                    <span class="label">Marca:</span>
+                                    <span class="value">Natura &amp; Co</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Valor:</span>
+                                    <span class="value">R$ 189,90</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Quantidade:</span>
+                                    <span class="value">3 produtos</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Expira em:</span>
+                                    <span class="value">07/06/2026</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Criada em:</span>
+                                    <span class="value">01/06/2026 14:30</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cart-item">
+                            <div class="cart-item-header">
+                                <div class="cart-item-info">
+                                    <h3 class="cart-item-name">João Santos</h3>
+                                    <p class="cart-item-phone">
+                                        <span class="label">Telefone:</span>
+                                        <span class="value">(21) 99876-5432</span>
+                                    </p>
+                                </div>
+                                <div class="cart-item-actions">
+                                    <button class="btn-whatsapp" data-cart-id="2" title="Enviar via WhatsApp">
+                                        <span class="icon">💬</span>
+                                    </button>
+                                    <button class="btn-details" data-cart-id="2" title="Ver detalhes">
+                                        <span class="icon">→</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="cart-item-details">
+                                <div class="detail-row">
+                                    <span class="label">Marca:</span>
+                                    <span class="value">Avon</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Valor:</span>
+                                    <span class="value">R$ 245,50</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Quantidade:</span>
+                                    <span class="value">5 produtos</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Expira em:</span>
+                                    <span class="value">08/06/2026</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Criada em:</span>
+                                    <span class="value">02/06/2026 10:15</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cart-item">
+                            <div class="cart-item-header">
+                                <div class="cart-item-info">
+                                    <h3 class="cart-item-name">Ana Oliveira</h3>
+                                    <p class="cart-item-phone">
+                                        <span class="label">Telefone:</span>
+                                        <span class="value">(85) 98765-1234</span>
+                                    </p>
+                                </div>
+                                <div class="cart-item-actions">
+                                    <button class="btn-whatsapp" data-cart-id="3" title="Enviar via WhatsApp">
+                                        <span class="icon">💬</span>
+                                    </button>
+                                    <button class="btn-details" data-cart-id="3" title="Ver detalhes">
+                                        <span class="icon">→</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="cart-item-details">
+                                <div class="detail-row">
+                                    <span class="label">Marca:</span>
+                                    <span class="value">The Body Shop</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Valor:</span>
+                                    <span class="value">R$ 156,75</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Quantidade:</span>
+                                    <span class="value">2 produtos</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Expira em:</span>
+                                    <span class="value">10/06/2026</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Criada em:</span>
+                                    <span class="value">03/06/2026 16:45</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cart-item">
+                            <div class="cart-item-header">
+                                <div class="cart-item-info">
+                                    <h3 class="cart-item-name">Carlos Ferreira</h3>
+                                    <p class="cart-item-phone">
+                                        <span class="label">Telefone:</span>
+                                        <span class="value">(47) 99876-5678</span>
+                                    </p>
+                                </div>
+                                <div class="cart-item-actions">
+                                    <button class="btn-whatsapp" data-cart-id="4" title="Enviar via WhatsApp">
+                                        <span class="icon">💬</span>
+                                    </button>
+                                    <button class="btn-details" data-cart-id="4" title="Ver detalhes">
+                                        <span class="icon">→</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="cart-item-details">
+                                <div class="detail-row">
+                                    <span class="label">Marca:</span>
+                                    <span class="value">Natura &amp; Co</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Valor:</span>
+                                    <span class="value">R$ 312,30</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Quantidade:</span>
+                                    <span class="value">6 produtos</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Expira em:</span>
+                                    <span class="value">12/06/2026</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Criada em:</span>
+                                    <span class="value">04/06/2026 09:20</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cart-item">
+                            <div class="cart-item-header">
+                                <div class="cart-item-info">
+                                    <h3 class="cart-item-name">Patricia Costa</h3>
+                                    <p class="cart-item-phone">
+                                        <span class="label">Telefone:</span>
+                                        <span class="value">(51) 98765-9999</span>
+                                    </p>
+                                </div>
+                                <div class="cart-item-actions">
+                                    <button class="btn-whatsapp" data-cart-id="5" title="Enviar via WhatsApp">
+                                        <span class="icon">💬</span>
+                                    </button>
+                                    <button class="btn-details" data-cart-id="5" title="Ver detalhes">
+                                        <span class="icon">→</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="cart-item-details">
+                                <div class="detail-row">
+                                    <span class="label">Marca:</span>
+                                    <span class="value">Avon</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Valor:</span>
+                                    <span class="value">R$ 198,60</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Quantidade:</span>
+                                    <span class="value">4 produtos</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Expira em:</span>
+                                    <span class="value">09/06/2026</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Criada em:</span>
+                                    <span class="value">05/06/2026 13:50</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cart-item">
+                            <div class="cart-item-header">
+                                <div class="cart-item-info">
+                                    <h3 class="cart-item-name">Rebecca Lima</h3>
+                                    <p class="cart-item-phone">
+                                        <span class="label">Telefone:</span>
+                                        <span class="value">(61) 99876-4444</span>
+                                    </p>
+                                </div>
+                                <div class="cart-item-actions">
+                                    <button class="btn-whatsapp" data-cart-id="6" title="Enviar via WhatsApp">
+                                        <span class="icon">💬</span>
+                                    </button>
+                                    <button class="btn-details" data-cart-id="6" title="Ver detalhes">
+                                        <span class="icon">→</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="cart-item-details">
+                                <div class="detail-row">
+                                    <span class="label">Marca:</span>
+                                    <span class="value">The Body Shop</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Valor:</span>
+                                    <span class="value">R$ 267,45</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Quantidade:</span>
+                                    <span class="value">4 produtos</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Expira em:</span>
+                                    <span class="value">11/06/2026</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Criada em:</span>
+                                    <span class="value">06/06/2026 11:30</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="pagination">
+                            <button class="btn-pagination" disabled>← Anterior</button>
+                            <span class="pagination-info">Página 1 de 2</span>
+                            <button class="btn-pagination">Próxima →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- History Tab -->
+                <div
+                    id="history-panel"
+                    class="tab-panel"
+                    role="tabpanel"
+                    aria-labelledby="history">
+                    <div class="cart-list">
+                        <div class="list-header">
+                            <p class="result-count">3 contatos registrados</p>
+                        </div>
+
+                        <!-- History Items (sorted by most recent first) -->
+                        <div class="history-item success">
+                            <div class="history-header">
+                                <div class="history-info">
+                                    <h3 class="history-client">Fernanda Martins</h3>
+                                    <p class="history-timestamp">
+                                        <span class="status-badge success">Contato realizado</span>
+                                        <span class="timestamp">08/06/2026 15:30</span>
+                                    </p>
+                                </div>
+                                <div class="history-financial">
+                                    <span class="label">Marca:</span>
+                                    <span class="value">Natura &amp; Co</span>
+                                </div>
+                                <div class="history-financial">
+                                    <span class="label">Valor:</span>
+                                    <span class="value">R$ 223,80</span>
+                                </div>
+                                <div class="history-financial">
+                                    <span class="label">Expira:</span>
+                                    <span class="value">10/06/2026</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="history-item failure">
+                            <div class="history-header">
+                                <div class="history-info">
+                                    <h3 class="history-client">Roberto Alves</h3>
+                                    <p class="history-timestamp">
+                                        <span class="status-badge failure">Contato sem sucesso</span>
+                                        <span class="timestamp">07/06/2026 10:45</span>
+                                    </p>
+                                    <p class="failure-reason">Motivo: Número não pertence à pessoa</p>
+                                </div>
+                                <div class="history-financial">
+                                    <span class="label">Marca:</span>
+                                    <span class="value">Avon</span>
+                                </div>
+                                <div class="history-financial">
+                                    <span class="label">Valor:</span>
+                                    <span class="value">R$ 145,20</span>
+                                </div>
+                                <div class="history-financial">
+                                    <span class="label">Expira:</span>
+                                    <span class="value">08/06/2026</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="history-item success">
+                            <div class="history-header">
+                                <div class="history-info">
+                                    <h3 class="history-client">Juliana Rocha</h3>
+                                    <p class="history-timestamp">
+                                        <span class="status-badge success">Contato realizado</span>
+                                        <span class="timestamp">06/06/2026 14:20</span>
+                                    </p>
+                                </div>
+                                <div class="history-financial">
+                                    <span class="label">Marca:</span>
+                                    <span class="value">The Body Shop</span>
+                                </div>
+                                <div class="history-financial">
+                                    <span class="label">Valor:</span>
+                                    <span class="value">R$ 189,99</span>
+                                </div>
+                                <div class="history-financial">
+                                    <span class="label">Expira:</span>
+                                    <span class="value">07/06/2026</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="pagination">
+                            <button class="btn-pagination" disabled>← Anterior</button>
+                            <span class="pagination-info">Página 1 de 1</span>
+                            <button class="btn-pagination" disabled>Próxima →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Details Modal -->
+    <div id="details-modal" class="modal" hidden>
+        <div class="modal-overlay" id="details-modal-overlay"></div>
+        <div class="modal-content">
+            <button class="btn-close" id="details-close">✕</button>
+
+            <!-- Fixed Header with Client Info -->
+            <div class="details-header">
+                <h2 id="details-client-name">Maria Silva</h2>
+                <div class="client-contact">
+                    <p id="details-client-phone">(11) 98765-4321</p>
+                    <button class="btn-whatsapp-header" id="details-whatsapp-btn" title="Enviar via WhatsApp">
+                        💬 WhatsApp
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tabs within Modal -->
+            <div class="modal-tabs">
+                <nav class="modal-tabs-nav" role="tablist">
+                    <button
+                        class="modal-tab-button"
+                        data-tab="profile"
+                        role="tab"
+                        aria-selected="false">
+                        Perfil
+                    </button>
+                    <button
+                        class="modal-tab-button"
+                        data-tab="history"
+                        role="tab"
+                        aria-selected="false">
+                        Histórico
+                    </button>
+                    <button
+                        class="modal-tab-button active"
+                        data-tab="carts"
+                        role="tab"
+                        aria-selected="true">
+                        Sacolas Abandonadas
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Modal Tab Content -->
+            <div class="modal-tab-content">
+                <!-- Profile Tab -->
+                <div class="modal-tab-panel" id="modal-profile-panel" hidden>
+                    <h3>Informações do Cliente</h3>
+                    <p>Conteúdo do perfil do cliente seria exibido aqui.</p>
+                </div>
+
+                <!-- History Tab -->
+                <div class="modal-tab-panel" id="modal-history-panel" hidden>
+                    <h3>Histórico de Contatos</h3>
+                    <p>Histórico de interações seria exibido aqui.</p>
+                </div>
+
+                <!-- Carts Tab (Default) -->
+                <div class="modal-tab-panel active" id="modal-carts-panel">
+                    <div class="cart-details">
+                        <div class="cart-dates">
+                            <div class="date-row">
+                                <span class="label">Data/Hora do Abandono:</span>
+                                <span class="value" id="abandon-date">01/06/2026 14:30</span>
+                            </div>
+                            <div class="date-row">
+                                <span class="label">Expiração:</span>
+                                <span class="value" id="expiration-date">07/06/2026</span>
+                            </div>
+                        </div>
+
+                        <div class="cart-items-section">
+                            <div class="section-header">
+                                <h3>Produtos na Sacola</h3>
+                                <button class="btn-select-all" id="select-all-btn">Selecionar Todos</button>
+                            </div>
+
+                            <div class="products-list">
+                                <label class="product-item">
+                                    <input type="checkbox" class="product-checkbox" value="prod1">
+                                    <span class="product-name">Creme Hidratante Premium</span>
+                                    <span class="product-price">R$ 89,90</span>
+                                </label>
+                                <label class="product-item">
+                                    <input type="checkbox" class="product-checkbox" value="prod2">
+                                    <span class="product-name">Shampoo Nutritivo 400ml</span>
+                                    <span class="product-price">R$ 65,00</span>
+                                </label>
+                                <label class="product-item">
+                                    <input type="checkbox" class="product-checkbox" value="prod3">
+                                    <span class="product-name">Sérum Facial Antienvelhecimento</span>
+                                    <span class="product-price">R$ 35,00</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="financial-summary">
+                            <div class="summary-row">
+                                <span class="label">Subtotal:</span>
+                                <span class="value">R$ 189,90</span>
+                            </div>
+                            <div class="summary-row">
+                                <span class="label">Desconto:</span>
+                                <span class="value">-R$ 0,00</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span class="label">Total:</span>
+                                <span class="value">R$ 189,90</span>
+                            </div>
+                        </div>
+
+                        <button class="btn-share" id="share-cart-btn">Compartilhar Sacola</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Send Message Modal -->
+    <div id="send-message-modal" class="modal" hidden>
+        <div class="modal-overlay" id="send-message-overlay"></div>
+        <div class="modal-content send-message">
+            <button class="btn-close" id="send-message-close">✕</button>
+            <h2>Enviar Mensagem</h2>
+
+            <textarea
+                id="message-textarea"
+                class="message-textarea"
+                placeholder="Digite sua mensagem..."
+                rows="6">Olá! Notei que você deixou alguns produtos no carrinho. Gostaria de completar sua compra? 😊</textarea>
+
+            <div class="modal-actions">
+                <button class="btn-cancel" id="cancel-send">Cancelar</button>
+                <button class="btn-send" id="confirm-send">Enviar Mensagem</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmation-modal" class="modal" hidden>
+        <div class="modal-overlay"></div>
+        <div class="modal-content confirmation">
+            <div id="confirmation-step-1" class="confirmation-step active">
+                <h2>Entrou em contato?</h2>
+                <p>Você conseguiu enviar a mensagem para <span id="confirm-client-name">o cliente</span>?</p>
+
+                <div class="confirmation-actions">
+                    <button class="btn-no" id="btn-no">Não</button>
+                    <button class="btn-yes" id="btn-yes">Sim</button>
+                </div>
+            </div>
+
+            <div id="confirmation-step-2" class="confirmation-step" hidden>
+                <h2>Qual foi o motivo?</h2>
+                <p>Selecione o motivo pelo qual não conseguiu contatar:</p>
+
+                <div class="failure-reasons">
+                    <label class="reason-option">
+                        <input type="radio" name="failure-reason" value="invalid-number">
+                        <span class="reason-text">Número inexistente ou com erro</span>
+                    </label>
+                    <label class="reason-option">
+                        <input type="radio" name="failure-reason" value="wrong-person">
+                        <span class="reason-text">Número não pertence à pessoa</span>
+                    </label>
+                    <label class="reason-option">
+                        <input type="radio" name="failure-reason" value="too-recent">
+                        <span class="reason-text">Última mensagem muito recente</span>
+                    </label>
+                    <label class="reason-option">
+                        <input type="radio" name="failure-reason" value="blocked">
+                        <span class="reason-text">Meu número foi restringido</span>
+                    </label>
+                </div>
+
+                <div class="confirmation-actions">
+                    <button class="btn-back" id="btn-back">Voltar</button>
+                    <button class="btn-confirm-failure" id="btn-confirm-failure" disabled>Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
