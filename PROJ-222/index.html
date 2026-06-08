@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sacolas Abandonadas — Natura Seller Center</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-shell">
+
+  <!-- ============================
+       TOP NAVIGATION
+       ============================ -->
+  <nav class="top-nav" role="navigation" aria-label="Navegação principal">
+    <div class="top-nav-inner">
+      <div class="top-nav-left">
+        <a class="nav-logo" href="#" aria-label="Natura Seller Center">
+          <div class="nav-logo-icon">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+          </div>
+          <span class="nav-brand">Seller Center</span>
+        </a>
+        <div class="nav-divider" aria-hidden="true"></div>
+        <span class="nav-page-title">Sacolas Abandonadas</span>
+      </div>
+      <div class="top-nav-right">
+        <div class="user-avatar" title="Consultora Natura" aria-label="Menu do usuário">CS</div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================
+       PAGE CONTENT
+       ============================ -->
+  <main class="page-content">
+
+    <!-- ============================================================
+         VIEW 1: LISTING PAGE (default)
+         ============================================================ -->
+    <div id="view-listing" class="view active">
+
+      <!-- Page Header -->
+      <div class="page-header">
+        <h1 class="page-title">Sacolas Abandonadas</h1>
+        <p class="page-subtitle">Gerencie os clientes que abandonaram suas sacolas de compras e entre em contato para recuperar vendas.</p>
+      </div>
+
+      <!-- Informative Accordion -->
+      <div class="accordion" id="how-it-works-accordion" role="region" aria-labelledby="accordion-header">
+        <button class="accordion-header" id="accordion-header" aria-expanded="false" aria-controls="accordion-content">
+          <div class="accordion-header-left">
+            <div class="accordion-icon-question" aria-hidden="true">?</div>
+            <span>Como funciona?</span>
+          </div>
+          <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="accordion-content" id="accordion-content" role="region" aria-labelledby="accordion-header">
+          <div class="accordion-body">
+            O fluxo de confirmação de contato é automático. Ao enviar uma mensagem pelo WhatsApp, você será solicitado a confirmar se o contato foi realizado. Todas as interações são registradas com status e timestamp, formando um histórico rastreável.
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Bar -->
+      <div class="tab-bar" role="tablist" aria-label="Abas de sacolas abandonadas">
+        <button class="tab-btn active" data-tab="paracontatar" role="tab" aria-selected="true" aria-controls="listing-tab-paracontatar">
+          Para Contatar
+          <span class="badge badge-primary" id="para-contatar-badge">15</span>
+        </button>
+        <button class="tab-btn" data-tab="historico" role="tab" aria-selected="false" aria-controls="listing-tab-historico">
+          Histórico
+        </button>
+      </div>
+
+      <!-- Tab: Para Contatar -->
+      <div id="listing-tab-paracontatar" class="tab-content active" role="tabpanel" aria-labelledby="tab-paracontatar">
+        <div class="table-wrapper">
+          <table class="data-table" aria-label="Clientes para contatar">
+            <thead>
+              <tr>
+                <th>Cliente</th>
+                <th>Telefone</th>
+                <th>Marca</th>
+                <th>Valor</th>
+                <th>Qtd</th>
+                <th>Expiração</th>
+                <th>Criação</th>
+                <th class="col-actions">Ações</th>
+              </tr>
+            </thead>
+            <tbody id="para-contatar-tbody">
+              <!-- Rendered by JS -->
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination" id="pagination-para-contatar" aria-label="Paginação"></div>
+      </div>
+
+      <!-- Tab: Histórico -->
+      <div id="listing-tab-historico" class="tab-content" role="tabpanel" aria-labelledby="tab-historico">
+        <div class="table-wrapper">
+          <table class="data-table" aria-label="Histórico de contatos">
+            <thead>
+              <tr>
+                <th>Cliente</th>
+                <th>Marca</th>
+                <th>Valor</th>
+                <th>Expiração</th>
+                <th>Status</th>
+                <th>Motivo</th>
+                <th>Data Contato</th>
+              </tr>
+            </thead>
+            <tbody id="historico-tbody">
+              <!-- Rendered by JS -->
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination" id="pagination-historico" aria-label="Paginação do histórico"></div>
+      </div>
+
+    </div>
+    <!-- end view-listing -->
+
+
+    <!-- ============================================================
+         VIEW 2: DETAILS PAGE
+         ============================================================ -->
+    <div id="view-details" class="view">
+
+      <!-- Details Header (sticky-like, inside content flow) -->
+      <div class="details-header">
+        <div class="details-header-left">
+          <button class="btn-back" id="btn-back-to-listing" aria-label="Voltar para a listagem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Voltar
+          </button>
+          <div class="details-client-info">
+            <span class="details-client-name" id="details-client-name">—</span>
+            <span class="details-client-phone" id="details-client-phone">—</span>
+          </div>
+        </div>
+        <div class="details-header-actions">
+          <button class="btn btn-whatsapp btn-sm" id="details-whatsapp-btn" onclick="openSendMessageModal(currentDetailsClientId)" aria-label="Enviar WhatsApp">
+            <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:white;flex-shrink:0;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            WhatsApp
+          </button>
+        </div>
+      </div>
+
+      <!-- Details Tab Bar -->
+      <div class="tab-bar" role="tablist" aria-label="Abas de detalhes do cliente" style="margin-top:var(--spacing-md);">
+        <button class="tab-btn" data-tab="perfil" role="tab" aria-selected="false">Perfil</button>
+        <button class="tab-btn" data-tab="historico" role="tab" aria-selected="false">Histórico</button>
+        <button class="tab-btn active" data-tab="sacolas" role="tab" aria-selected="true">Sacolas Abandonadas</button>
+      </div>
+
+      <!-- Details Tab Content: Perfil -->
+      <div id="details-tab-perfil" class="tab-content" role="tabpanel">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Details Tab Content: Histórico -->
+      <div id="details-tab-historico" class="tab-content" role="tabpanel">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Details Tab Content: Sacolas Abandonadas (default) -->
+      <div id="details-tab-sacolas" class="tab-content active" role="tabpanel">
+        <!-- Rendered by JS -->
+      </div>
+
+    </div>
+    <!-- end view-details -->
+
+  </main>
+  <!-- end page-content -->
+
+</div>
+<!-- end app-shell -->
+
+
+<!-- ============================
+     MODAL 1: SEND MESSAGE
+     ============================ -->
+<div id="modal-send-message-overlay" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modal-send-message-title">
+  <div class="modal" id="modal-send-message">
+    <div class="modal-header">
+      <div class="modal-header-content">
+        <div class="modal-title" id="modal-send-message-title">Enviar Mensagem</div>
+        <div class="modal-subtitle" id="modal-send-message-subtitle">Enviar mensagem para o cliente</div>
+      </div>
+      <button class="modal-close-btn" id="btn-close-send-message" aria-label="Fechar modal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <label class="form-label" for="modal-message-textarea">Mensagem</label>
+      <div class="textarea-wrapper">
+        <textarea
+          id="modal-message-textarea"
+          class="form-textarea"
+          rows="5"
+          placeholder="Escreva sua mensagem aqui..."
+          aria-label="Texto da mensagem para o cliente"
+        ></textarea>
+      </div>
+      <p style="font-size:12px;color:var(--color-text-secondary);margin-top:8px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        A mensagem será enviada via WhatsApp. Você pode editar o texto antes de enviar.
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" id="btn-cancel-send-message">Cancelar</button>
+      <button class="btn btn-whatsapp" id="btn-send-message">
+        <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:white;flex-shrink:0;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Enviar Mensagem
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================
+     MODAL 2: CONTACT CONFIRMATION
+     ============================ -->
+<div id="modal-confirmation-overlay" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modal-confirmation-title">
+  <div class="modal" id="modal-confirmation">
+    <!-- Content injected by JS (step 1 and step 2) -->
+  </div>
+</div>
+
+
+<!-- ============================
+     WHATSAPP REDIRECT OVERLAY
+     ============================ -->
+<div id="whatsapp-redirect-overlay" class="whatsapp-redirect-overlay hidden" role="status" aria-live="polite" aria-label="Redirecionando para WhatsApp">
+  <div class="whatsapp-redirect-card">
+    <div class="whatsapp-spinner" aria-hidden="true"></div>
+    <div class="whatsapp-redirect-text">Redirecionando para WhatsApp...</div>
+    <div class="whatsapp-redirect-subtext">Aguarde um instante</div>
+  </div>
+</div>
+
+
+<!-- ============================
+     TOAST CONTAINER
+     ============================ -->
+<div id="toast-container" class="toast-container" role="alert" aria-live="polite" aria-atomic="true"></div>
+
+
+<!-- JavaScript -->
+<script src="js/script.js"></script>
+</body>
+</html>
