@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacolas Abandonadas - Seller Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                </button>
+                <div class="logo">consultoria de beleza</div>
+                <div class="profile-avatar">NA</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <button class="close-sidebar" aria-label="Close sidebar">×</button>
+        <ul class="nav-links">
+            <li><a href="#" class="nav-link">Painel de Vendas</a></li>
+            <li><a href="#" class="nav-link">Configuração da Minha Loja</a></li>
+            <li><a href="#" class="nav-link">Minhas Vendas</a></li>
+            <li><a href="#" class="nav-link">Meus Clientes</a></li>
+            <li><a href="#" class="nav-link">Cupons</a></li>
+            <li><a href="#" class="nav-link conecta">Conecta Clientes <span class="badge">NEW</span></a></li>
+            <li><a href="#" class="nav-link">Relatórios</a></li>
+            <li><a href="#" class="nav-link">Dúvidas Frequentes</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <button class="back-btn" id="backBtn" aria-label="Go back">← Vendas</button>
+            </div>
+
+            <!-- Info Banner -->
+            <section class="info-banner" id="infoBanner">
+                <div class="banner-icon">
+                    <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                </div>
+                <div class="banner-content">
+                    <h3>O que são as sacolas abandonadas?</h3>
+                    <p>São pedidos que seus clientes ainda não finalizaram, ficando disponíveis nesta lista por 30 dias. Com a sacola abandonada, você poderá entrar em contato com seus clientes e incentivá-los a concluir uma compra. Aproveite esse momento para oferecer um cupom especial para os clientes que estão fazendo devolução esse mês.</p>
+                </div>
+                <button class="collapse-btn" id="collapseBtn" aria-expanded="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                </button>
+            </section>
+
+            <!-- Tabs -->
+            <div class="tabs-container">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="para-contatar">para contatar</button>
+                    <button class="tab-btn" data-tab="historico">histórico</button>
+                </div>
+
+                <!-- Para Contatar Tab -->
+                <div class="tab-content active" id="para-contatar">
+                    <div class="list-header">
+                        <div class="header-col col-cliente">cliente</div>
+                        <div class="header-col col-marca">marca</div>
+                        <div class="header-col col-valor">valor</div>
+                        <div class="header-col col-expira">expira em</div>
+                        <div class="header-col col-criacao">criada em</div>
+                        <div class="header-col col-actions"></div>
+                    </div>
+                    <div class="list-items" id="paraContatarList">
+                        <!-- Items will be rendered here by JavaScript -->
+                    </div>
+                    <div class="pagination">
+                        <span class="pagination-info">Página <span id="currentPageToContact">1</span> de <span id="totalPagesContact">3</span></span>
+                        <div class="pagination-controls">
+                            <button class="pagination-btn" id="prevPageContact" aria-label="Previous page">←</button>
+                            <button class="pagination-btn" id="nextPageContact" aria-label="Next page">→</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Histórico Tab -->
+                <div class="tab-content" id="historico">
+                    <div class="list-header">
+                        <div class="header-col col-cliente">cliente</div>
+                        <div class="header-col col-marca">marca</div>
+                        <div class="header-col col-valor">valor</div>
+                        <div class="header-col col-expira">expira em</div>
+                        <div class="header-col col-status">status</div>
+                    </div>
+                    <div class="list-items" id="historicoList">
+                        <!-- Items will be rendered here by JavaScript -->
+                    </div>
+                    <div class="pagination">
+                        <span class="pagination-info">Página <span id="currentPageHistory">1</span> de <span id="totalPagesHistory">1</span></span>
+                        <div class="pagination-controls">
+                            <button class="pagination-btn" id="prevPageHistory" aria-label="Previous page">←</button>
+                            <button class="pagination-btn" id="nextPageHistory" aria-label="Next page">→</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Details Modal / Drawer -->
+    <div class="details-modal" id="detailsModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content details-content">
+            <!-- Details Header -->
+            <div class="details-header">
+                <button class="close-btn" id="closeDetailsBtn" aria-label="Close">×</button>
+                <div class="details-customer">
+                    <h2 class="customer-name" id="detailsCustomerName">Ana Carolina</h2>
+                    <p class="customer-phone" id="detailsCustomerPhone">(11) 991929999</p>
+                </div>
+                <div class="details-actions">
+                    <button class="whatsapp-btn" id="detailsWhatsappBtn" aria-label="Contact on WhatsApp">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.869 1.171V5.75A9.994 9.994 0 0112.004 2c5.522 0 10 4.477 10 9.997 0 5.5-4.44 9.997-9.997 9.997-1.659 0-3.297-.41-4.708-1.18l-.5.08h-.005C6.626 20.575 2 16.178 2 10.581 2 5.5 6.477 1.5 12.004 1.5c5.522 0 10 3.975 10 9.997 0 5.5-4.477 9.997-9.997 9.997z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Details Tabs -->
+            <div class="details-tabs">
+                <button class="details-tab-btn" data-details-tab="sacolas">Sacolas Abandonadas</button>
+                <button class="details-tab-btn" data-details-tab="historico">Histórico</button>
+                <button class="details-tab-btn" data-details-tab="perfil">Perfil</button>
+            </div>
+
+            <!-- Sacolas Abandonadas Content -->
+            <div class="details-tab-content active" id="detailsSacolas">
+                <div class="sacola-info">
+                    <div class="info-row">
+                        <span class="info-label">Abandono:</span>
+                        <span class="info-value" id="detailsAbandonDate">24/02/25 às 14:30</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Expira em:</span>
+                        <span class="info-value" id="detailsExpiryDate">10 dias</span>
+                    </div>
+                </div>
+
+                <div class="products-section">
+                    <h3>Produtos na sacola</h3>
+                    <div class="select-all">
+                        <input type="checkbox" id="selectAllProducts" aria-label="Select all products">
+                        <label for="selectAllProducts">Selecionar todos</label>
+                    </div>
+                    <div class="products-list" id="productsList">
+                        <!-- Products will be rendered here -->
+                    </div>
+                </div>
+
+                <div class="summary-section">
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="summarySubtotal">R$ 000,00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Desconto</span>
+                        <span id="summaryDiscount">R$ 0,00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span id="summaryTotal">R$ 000,00</span>
+                    </div>
+                </div>
+
+                <button class="btn-primary btn-share" id="shareBtn">Compartilhar Sacola</button>
+            </div>
+
+            <!-- Histórico Content -->
+            <div class="details-tab-content" id="detailsHistorico">
+                <div class="history-list" id="detailsHistoryList">
+                    <!-- History will be rendered here -->
+                </div>
+            </div>
+
+            <!-- Perfil Content -->
+            <div class="details-tab-content" id="detailsPerfil">
+                <p>Conteúdo do perfil do cliente</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Send Message Modal -->
+    <div class="modal" id="sendMessageModal">
+        <div class="modal-overlay" id="sendMessageOverlay"></div>
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2>Enviar Mensagem</h2>
+                <button class="close-modal-btn" id="closeSendMessageBtn" aria-label="Close">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="message-container">
+                    <label for="messageText">Mensagem:</label>
+                    <textarea id="messageText" class="message-input" rows="6" placeholder="Editar mensagem...">Olá! Vimos que você deixou uma sacola com itens. Gostaria de compartilhar os detalhes para facilitar sua compra?</textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="cancelSendBtn">Cancelar</button>
+                <button class="btn-primary" id="sendWhatsappBtn">Enviar Mensagem</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal" id="confirmationModal">
+        <div class="modal-overlay" id="confirmationOverlay"></div>
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2 id="confirmationTitle">Entrou em contato?</h2>
+                <button class="close-modal-btn" id="closeConfirmationBtn" aria-label="Close">×</button>
+            </div>
+            <div class="modal-body">
+                <p id="confirmationMessage">Você conseguiu enviar a mensagem para <strong id="confirmationCustomer">nome do cliente</strong>?</p>
+
+                <!-- Step 1: Contact Success -->
+                <div id="step1" class="confirmation-step active">
+                    <div class="button-group">
+                        <button class="btn-secondary" id="noContactBtn">Não</button>
+                        <button class="btn-primary" id="yesContactBtn">Sim, entrei em contato</button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Failure Reason -->
+                <div id="step2" class="confirmation-step">
+                    <p class="step-subtitle">Selecione o motivo de não ter conseguido entrar em contato</p>
+                    <div class="reason-options">
+                        <button class="reason-btn" data-reason="invalid">O número não existe ou tem erro</button>
+                        <button class="reason-btn" data-reason="wrong-person">O número não pertence à pessoa</button>
+                        <button class="reason-btn" data-reason="recent">Última mensagem muito recente</button>
+                        <button class="reason-btn" data-reason="restricted">Meu número foi restringido</button>
+                    </div>
+                    <button class="btn-secondary btn-back" id="backBtn2">Voltar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
